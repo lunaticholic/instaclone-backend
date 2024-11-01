@@ -2,6 +2,7 @@ import {ApolloServer, gql} from "apollo-server";
 
 const typeDefs = gql`
     type Movie {
+        id: Int
         title: String
         year: Int
     }
@@ -27,7 +28,7 @@ const resolvers = {
         },
         deleteMovie: (_, { title }) => {
             console.log(title);
-            return title'
+            return title;
         },
     },
 };

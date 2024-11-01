@@ -12,3 +12,14 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+// https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/using-prisma-migrate-typescript-postgresql
+// prisma를 이용하려면 위의 링크를 통해서 Database Schema를 확인해야 한다.
+model Movie {
+  id        Int      @id @default(autoincrement())
+  title     String
+  year      Int
+  genre     String? // 뒤에 ?를 붙이면 non required 필드가 생성된다.
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
