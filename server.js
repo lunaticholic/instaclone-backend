@@ -14,11 +14,11 @@ const typeDefs = gql`
     }
     type Query {
         movies: [Movie]
-        movie: Movie
+        movie(id: Int!): Movie
     }
     type Mutation {
         CreateMovie(title: String!, year: Int!, genre: String): Movie
-        deleteMovie(title: String!): Boolean
+        deleteMovie(id: String!): Boolean
     }
 `;
 
